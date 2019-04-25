@@ -2,8 +2,8 @@
 Cookiecutter Wagtail Package
 ============================
 
-.. image:: https://travis-ci.org/pydanny/cookiecutter-wagtailpackage.svg?branch=master
-    :target: https://travis-ci.org/pydanny/cookiecutter-wagtailpackage
+.. image:: https://travis-ci.org/ntbrown/cookiecutter-wagtailpackage.svg?branch=master
+    :target: https://travis-ci.org/ntbrown/cookiecutter-wagtailpackage
 
 A cookiecutter_ template for creating reusable Wagtail packages (installable apps) quickly.
 
