@@ -1,8 +1,8 @@
 import os
 from contextlib import contextmanager
 
-import pytest
 import sh
+import pytest
 from cookiecutter.utils import rmtree
 
 
@@ -181,7 +181,7 @@ def test_django_versions_default(cookies):
 
         tox_file = result.project.join('tox.ini')
         tox_text = tox_file.read()
-        assert "{py27,py34,py35,py36}-django-111" in tox_text
+        assert "{py34,py35,py36}-django-111" in tox_text
         assert "{py34,py35,py36}-django-20" in tox_text
         travis_file = result.project.join('.travis.yml')
         travis_text = travis_file.read()
@@ -195,8 +195,6 @@ def test_django_versions_default(cookies):
         setup_text = setup_file.read()
         assert "'Framework :: Django :: 1.11'," in setup_text
         assert "'Framework :: Django :: 2.0'," in setup_text
-        assert "'Programming Language :: Python :: 2'," in setup_text
-        assert "'Programming Language :: Python :: 2.7'," in setup_text
         assert "'Programming Language :: Python :: 3'," in setup_text
         assert "'Programming Language :: Python :: 3.4'," in setup_text
         assert "'Programming Language :: Python :: 3.5'," in setup_text
@@ -213,11 +211,10 @@ def test_new_django_versions(cookies):
 
         tox_file = result.project.join('tox.ini')
         tox_text = tox_file.read()
-        assert "{py27,py34,py35,py36}-django-111" in tox_text
+        assert "{py34,py35,py36}-django-111" in tox_text
         assert 'django19' not in tox_text
         travis_file = result.project.join('.travis.yml')
         travis_text = travis_file.read()
-        assert 'py27-django-111' in travis_text
         assert 'py34-django-111' in travis_text
         assert 'py35-django-111' in travis_text
         assert 'django19' not in travis_text
@@ -226,8 +223,6 @@ def test_new_django_versions(cookies):
         assert "'Framework :: Django :: 2.0'," in setup_text
         assert "'Framework :: Django :: 1.11'," in setup_text
         assert "'Framework :: Django :: 1.9'," not in setup_text
-        assert "'Programming Language :: Python :: 2'," in setup_text
-        assert "'Programming Language :: Python :: 2.7'," in setup_text
         assert "'Programming Language :: Python :: 3'," in setup_text
         assert "'Programming Language :: Python :: 3.4'," in setup_text
         assert "'Programming Language :: Python :: 3.5'," in setup_text
