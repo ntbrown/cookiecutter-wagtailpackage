@@ -63,21 +63,36 @@ setup(
         '{{ cookiecutter.app_name }}',
     ],
     include_package_data=True,
-    install_requires=[{% if cookiecutter.models != "Comma-separated list of models" %}"django-model-utils>=2.0",{% endif %}],
+    install_requires=["wagtail>=2.4,<=2.5",],
 {%- if cookiecutter.open_source_license in license_classifiers %}
-    license="{{ cookiecutter.open_source_license }}",
+    license='{{ cookiecutter.open_source_license }}',
+{%- else %}
+    license='BSD',
 {%- endif %}
     zip_safe=False,
     keywords='{{ cookiecutter.repo_name }}',
     classifiers=[
-        'Development Status :: 3 - Alpha',{% if '1.11' in cookiecutter.django_versions %}
-        'Framework :: Django :: 2.0',{% endif %}
+        'Development Status :: 3 - Alpha',
+        'Environment :: Web Environment',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',
-        'Natural Language :: English',
+        {%- if cookiecutter.open_source_license in license_classifiers %}
+            {%- for key, value in license_classifiers %}
+                {%- if key == cookiecutter.open_source_license %}
+                    {{ value }},
+                {%- endif %}
+            {%- endfor %}
+        {%- else %}
+            {{ license_classifiers.BSD }},
+        {%- endif %}
+        'Operating System :: OS Independent',
+        'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Framework :: Django',
+        'Framework :: Django :: 2.0',
+        'Framework :: Django :: 2.1',
+        'Framework :: Django :: 2.2',
     ],
 )

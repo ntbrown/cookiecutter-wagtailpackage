@@ -59,8 +59,8 @@ def test_readme(cookies):
         assert '(myenv) $ pip install tox' in readme_lines
 
 
-def test_models(cookies):
-    extra_context = {'models': 'ChocolateChip,Zimsterne', 'app_name': 'cookies'}
+def test_pages(cookies):
+    extra_context = {'pages': 'ChocolateChip,Zimsterne', 'app_name': 'cookies'}
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
 
         model_file = result.project.join('cookies', 'models.py')
@@ -115,64 +115,6 @@ def test_setup_py(cookies):
         setup_text = setup_file.read()
         assert "version=version" in setup_text
         assert "    author='Cookie McCookieface'," in setup_text
-
-
-def test_django_versions_default(cookies):
-    """
-    Test case to assert that the tox.ini & setup.py files are generated with correct versions w default Django versions
-    """
-
-    with bake_in_temp_dir(cookies) as result:
-
-        tox_file = result.project.join('tox.ini')
-        tox_text = tox_file.read()
-        assert "{py34,py35,py36}-django-111" in tox_text
-        assert "{py34,py35,py36}-django-20" in tox_text
-        travis_file = result.project.join('.travis.yml')
-        travis_text = travis_file.read()
-        assert 'py34-django-111' in travis_text
-        assert 'py35-django-111' in travis_text
-        assert 'py36-django-111' in travis_text
-        assert 'py34-django-20' in travis_text
-        assert 'py35-django-20' in travis_text
-        assert 'py36-django-20' in travis_text
-        setup_file = result.project.join('setup.py')
-        setup_text = setup_file.read()
-        assert "'Framework :: Django :: 1.11'," in setup_text
-        assert "'Framework :: Django :: 2.0'," in setup_text
-        assert "'Programming Language :: Python :: 3'," in setup_text
-        assert "'Programming Language :: Python :: 3.4'," in setup_text
-        assert "'Programming Language :: Python :: 3.5'," in setup_text
-        assert "'Programming Language :: Python :: 3.6'," in setup_text
-
-
-def test_new_django_versions(cookies):
-    """
-    Test case to assert that the tox.ini & setup.py files are generated with correct versions with a new Django version
-    """
-
-    extra_context = {'django_versions': '1.11,2.0'}
-    with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
-
-        tox_file = result.project.join('tox.ini')
-        tox_text = tox_file.read()
-        assert "{py34,py35,py36}-django-111" in tox_text
-        assert 'django19' not in tox_text
-        travis_file = result.project.join('.travis.yml')
-        travis_text = travis_file.read()
-        assert 'py34-django-111' in travis_text
-        assert 'py35-django-111' in travis_text
-        assert 'django19' not in travis_text
-        setup_file = result.project.join('setup.py')
-        setup_text = setup_file.read()
-        assert "'Framework :: Django :: 2.0'," in setup_text
-        assert "'Framework :: Django :: 1.11'," in setup_text
-        assert "'Framework :: Django :: 1.9'," not in setup_text
-        assert "'Programming Language :: Python :: 3'," in setup_text
-        assert "'Programming Language :: Python :: 3.4'," in setup_text
-        assert "'Programming Language :: Python :: 3.5'," in setup_text
-        assert "'Programming Language :: Python :: 3.6'," in setup_text
-        assert "'Programming Language :: Python :: 3.3'," not in setup_text
 
 
 def test_flake8_compliance(cookies):

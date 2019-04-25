@@ -66,8 +66,8 @@ It prompts you for information that it uses to create the app, with defaults in 
     repo_name [blogging_for_humans]:
     app_name [blogging_for_humans]:
     project_short_description [Your project description goes here]: A sample Wagtail package
-    models [Comma-separated list of models]: BlogPage, BlogIndex
-    django_versions [2.0]:
+    pages [Comma-separated list of custom Wagtail pages]: BlogPage, BlogIndex
+    pages [Comma-separated list of custom Wagtail blocks]:
     version [0.1.0]:
     create_example_project [N]:
     Select open_source_license:
