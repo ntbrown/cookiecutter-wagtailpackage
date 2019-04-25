@@ -76,14 +76,15 @@ setup(
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         {%- if cookiecutter.open_source_license in license_classifiers %}
+        {%- spaceless %}
             {%- for key, value in license_classifiers.items() %}
                 {%- if key == cookiecutter.open_source_license %}
-                    {{ value }},
+                    '{{ value }}',
                 {%- endif %}
             {%- endfor %}
         {%- else %}
-            {{ license_classifiers.BSD }},
-        {%- endif %}
+            '{{ license_classifiers.BSD }}',
+        {%- endspaceless %}{%- endif %}
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
