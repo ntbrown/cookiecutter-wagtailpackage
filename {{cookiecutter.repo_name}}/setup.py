@@ -76,7 +76,7 @@ setup(
         'Environment :: Web Environment',
         'Intended Audience :: Developers',
         {%- if cookiecutter.open_source_license in license_classifiers %}
-            {%- for key, value in license_classifiers %}
+            {%- for key, value in license_classifiers.items %}
                 {%- if key == cookiecutter.open_source_license %}
                     {{ value }},
                 {%- endif %}
