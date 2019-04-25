@@ -15,7 +15,7 @@ a common pattern dictated by the experts and maintained here.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _cookiecutter-pypackage: https://github.com/audreyr/cookiecutter-pypackage
-.. _cookiecutter-pypackage: https://github.com/pydanny/cookiecutter-djangopackage
+.. _cookiecutter-djangopackage: https://github.com/pydanny/cookiecutter-djangopackage
 
 Features
 --------
