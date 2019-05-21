@@ -4,7 +4,7 @@ from wagtail.core.models import Page
 
 {% for page in cookiecutter.pages.split(',') %}
 class {{ page.strip() }}(Page):
-	pass
-    
-{% endfor %}
+    pass
+
+{% endfor -%}
 {% endif %}

@@ -4,7 +4,7 @@ from wagtail.core import blocks
 
 {% for block in cookiecutter.blocks.split(',') %}
 class {{ block.strip() }}(blocks.StructBlock):
-	pass
-    
-{% endfor %}
+    pass
+
+{%- endfor %}
 {% endif %}
