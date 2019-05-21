@@ -13,14 +13,13 @@ Including another URLconf
 	1. Import the include() function: from django.conf.urls import url, include
 	2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.contrib import admin
 from django.conf import settings
+from django.contrib import admin
 from django.urls import include, path, re_path
-from wagtail.core import views as wagtail_views
 from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.core import views as wagtail_views
+from wagtail.core.urls import WAGTAIL_FRONTEND_LOGIN_TEMPLATE, serve_pattern
 from wagtail.documents import urls as wagtaildocs_urls
-from wagtail.core.urls import serve_pattern, WAGTAIL_FRONTEND_LOGIN_TEMPLATE
-
 
 urlpatterns = [
 	path('django-admin/', admin.site.urls),

@@ -1,8 +1,8 @@
 import os
 from contextlib import contextmanager
 
-import sh
 import pytest
+import sh
 from cookiecutter.utils import rmtree
 
 
@@ -24,7 +24,8 @@ def inside_dir(dirpath):
 def bake_in_temp_dir(cookies, *args, **kwargs):
     """
     Delete the temporal directory that is created when executing the tests
-    :param cookies: pytest_cookies.Cookies, cookie to be baked and its temporal files will be removed
+    :param cookies: pytest_cookies.Cookies, cookie to be baked and its temporal
+    files will be removed
     """
     result = cookies.bake(*args, **kwargs)
     try:
@@ -98,6 +99,7 @@ def test_authors(cookies):
         authors_text = authors_file.read()
         assert 'Cookie McCookieface' in authors_text
 
+
 def test_manifest(cookies):
     extra_context = {'app_name': 'cookie_lover'}
     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
@@ -146,8 +148,8 @@ def test_app_config(cookies):
         readme_text = readme_file.read()
         assert "'cookie_lover.apps.CookieLoverConfig'," in readme_text
 
-# example project tests from here on
 
+# example project tests from here on
 def test_make_migrations(cookies):
     """generated project should be able to generate migrations"""
     with bake_in_temp_dir(cookies, extra_context={}) as result:

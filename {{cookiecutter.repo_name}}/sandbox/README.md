@@ -1,12 +1,12 @@
 ##Example Project for {{cookiecutter.app_name}}
 
-This example is provided as a convenience feature to allow potential users to try the app straight from the app repo without having to create a django project.
+This sandbox project is provided as a convenience feature to allow potential users to try the app straight from the app repo without having to create a django project.
 
 It can also be used to develop the app in place.
 
-To run this example, follow these instructions:
+To run the sandbox, follow these instructions:
 
-1. Navigate to the `example` directory
+1. Navigate to the `sandbox` directory
 2. Install the requirements for the package:
 		
 		pip install -r requirements.txt

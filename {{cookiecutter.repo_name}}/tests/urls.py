@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
-from django.conf.urls import url, include
-
+from django.urls import include, re_path, path
 
 urlpatterns = [
-    url(r'^', include('{{ cookiecutter.app_name }}.urls', namespace='{{ cookiecutter.app_name }}')),
+    re_path(r'^', include('{{ cookiecutter.app_name }}.urls', namespace='{{ cookiecutter.app_name }}')),
 ]

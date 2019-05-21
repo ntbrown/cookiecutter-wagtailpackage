@@ -1,7 +1,7 @@
+import logging
 import re
 import sys
 
-import logging
 logging.basicConfig(level=logging.DEBUG)
 
 logger = logging.getLogger('pre_gen_project')

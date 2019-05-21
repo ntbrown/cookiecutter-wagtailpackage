@@ -21,29 +21,3 @@ script: tox -e $TOX_ENV
 
 after_success:
   - codecov -e TOX_ENV
-
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
-#   keep_history: true
-#   on:
-#     branch: master
-
-# deploy:
-#   provider: heroku
-#   api_key: ...
-#   app:
-#     master: {{ cookiecutter.app_name }}-staging
-#     development: {{ cookiecutter.app_name }}-development
-#     production: {{ cookiecutter.app_name }}-production
-
-# deploy:
-    # provider: pypi
-    # user: ...
-    # password: ...
-    # on:
-      # tags: true
-      # branch: master
-    # skip_existing: true
-    # distributions: "sdist bdist_wheel" # Your distributions here
