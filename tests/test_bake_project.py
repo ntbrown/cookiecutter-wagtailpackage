@@ -172,6 +172,7 @@ def test_make_migrations(cookies):
         res = result.project.join('manage.py')
         try:
             sh.python(res, 'makemigrations')
+            sh.python(res, 'migrate')
         except sh.ErrorReturnCode as e:
             pytest.fail(str(e))
 
