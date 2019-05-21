@@ -10,7 +10,7 @@ PROJECT_DIRECTORY = os.path.realpath(os.path.curdir)
 
 
 def remove_example_project(project_directory):
-    """Removes the taskapp if celery isn't going to be used"""
+    """Remove the taskapp if celery isn't going to be used."""
     # Determine the local_setting_file_location
     location = os.path.join(
         PROJECT_DIRECTORY,
