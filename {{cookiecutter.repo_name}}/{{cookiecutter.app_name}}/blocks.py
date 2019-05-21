@@ -6,5 +6,5 @@ from wagtail.core import blocks
 class {{ block.strip() }}(blocks.StructBlock):
     pass
 
-{%- endfor %}
+{% endfor -%}
 {% endif %}

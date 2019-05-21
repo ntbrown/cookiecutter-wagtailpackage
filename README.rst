@@ -54,11 +54,6 @@ harnesses, you get Cookiecutter_ to do all the work.
 
 It prompts you for information that it uses to create the app, with defaults in square brackets. Answer them::
 
-    Cloning into 'cookiecutter-wagtailpackage'...
-    remote: Counting objects: 49, done.
-    remote: Compressing objects: 100% (33/33), done.
-    remote: Total 49 (delta 6), reused 48 (delta 5)
-    Unpacking objects: 100% (49/49), done.
     full_name [Your full name here]: Nicholas Tyler Brown
     email [you@example.com]: ntbrown@gmail.com
     github_username [yourname]: ntbrown
