@@ -46,3 +46,5 @@ INSTALLED_APPS = [
 SITE_ID = 1
 
 MIDDLEWARE = ()
+
+WAGTAIL_SITE_NAME = 'My Example Site'
