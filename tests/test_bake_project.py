@@ -134,23 +134,6 @@ def test_setup_py(cookies):
         assert "    author='Cookie McCookieface'," in setup_text
 
 
-# def test_flake8_compliance(cookies):
-#     """Test to ensure flake8 compliance."""
-#     extra_context = {'create_example_project': 'Y'}
-#     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
-#         for file_obj in result.project.listdir():
-#             name = os.path.join(
-#                 file_obj.dirname,
-#                 file_obj.basename
-#             )
-#             if not name.endswith('.py'):
-#                 continue
-#             try:
-#                 sh.flake8(name)
-#             except sh.ErrorReturnCode as e:
-#                 pytest.fail(str(e))
-
-
 def test_app_config(cookies):
     """Test to the check the app config and INSTALLED_APPS."""
     extra_context = {'app_name': 'cookie_lover'}
@@ -166,17 +149,6 @@ def test_app_config(cookies):
 
 
 # example project tests from here on
-def test_make_migrations(cookies):
-    """Generated project should be able to generate migrations."""
-    with bake_in_temp_dir(cookies, extra_context={}) as result:
-        res = result.project.join('manage.py')
-        try:
-            sh.python(res, 'makemigrations')
-            sh.python(res, 'migrate')
-        except sh.ErrorReturnCode as e:
-            pytest.fail(str(e))
-
-
 def test_run_tests(cookies):
     """Generated project should run tests."""
     with bake_in_temp_dir(cookies, extra_context={}) as result:
