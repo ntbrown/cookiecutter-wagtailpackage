@@ -8,9 +8,9 @@ python:
   - "3.7"
 
 env:
-  - TOX_ENV=py37-django-20
-  - TOX_ENV=py36-django-20
-  - TOX_ENV=py35-django-20
+  - TOX_ENV=py37-wagtail-20
+  - TOX_ENV=py36-wagtail-20
+  - TOX_ENV=py35-wagtail-20
 
 matrix:
   fast_finish: true

@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    '{{ cookiecutter.app_name }}',
     'modelcluster',
     'taggit',
     'wagtail.contrib.forms',
@@ -54,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    '{{ cookiecutter.app_name }}',
 ]
 
 MIDDLEWARE = [
