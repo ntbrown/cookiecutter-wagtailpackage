@@ -146,7 +146,7 @@ def test_app_config(cookies):
         assert "name = 'cookie_lover'" in apps_text
         readme_file = result.project.join('README.rst')
         readme_text = readme_file.read()
-        assert "'cookie_lover.apps.CookieLoverConfig'," in readme_text
+        assert "'cookie_lover'," in readme_text
 
 
 # example project tests from here on
