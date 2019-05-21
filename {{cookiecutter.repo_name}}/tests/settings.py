@@ -7,7 +7,7 @@ DEBUG = True
 USE_TZ = True
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "{% for i in range(0, 50) %}{{ 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)' | random }}{% endfor %}"
+SECRET_KEY = "{% for i in range(0, 50) %}{{ 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'|random }}{% endfor %}"
 
 DATABASES = {
     "default": {

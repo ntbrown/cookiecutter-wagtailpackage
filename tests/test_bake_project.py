@@ -1,8 +1,8 @@
 import os
 from contextlib import contextmanager
 
-import pytest
 import sh
+import pytest
 from cookiecutter.utils import rmtree
 
 
