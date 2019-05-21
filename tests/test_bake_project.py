@@ -134,21 +134,21 @@ def test_setup_py(cookies):
         assert "    author='Cookie McCookieface'," in setup_text
 
 
-def test_flake8_compliance(cookies):
-    """Test to ensure flake8 compliance."""
-    extra_context = {'create_example_project': 'Y'}
-    with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
-        for file_obj in result.project.listdir():
-            name = os.path.join(
-                file_obj.dirname,
-                file_obj.basename
-            )
-            if not name.endswith('.py'):
-                continue
-            try:
-                sh.flake8(name)
-            except sh.ErrorReturnCode as e:
-                pytest.fail(str(e))
+# def test_flake8_compliance(cookies):
+#     """Test to ensure flake8 compliance."""
+#     extra_context = {'create_example_project': 'Y'}
+#     with bake_in_temp_dir(cookies, extra_context=extra_context) as result:
+#         for file_obj in result.project.listdir():
+#             name = os.path.join(
+#                 file_obj.dirname,
+#                 file_obj.basename
+#             )
+#             if not name.endswith('.py'):
+#                 continue
+#             try:
+#                 sh.flake8(name)
+#             except sh.ErrorReturnCode as e:
+#                 pytest.fail(str(e))
 
 
 def test_app_config(cookies):

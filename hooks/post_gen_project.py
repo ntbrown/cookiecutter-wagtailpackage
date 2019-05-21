@@ -1,6 +1,7 @@
 """
 Does the following:
-# 1. Removes the sandbox project if it isn't going to be used
+
+1. Removes the sandbox project if it isn't going to be used
 """
 
 import os
